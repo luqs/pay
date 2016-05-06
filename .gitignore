@@ -1,0 +1,12 @@
+**/target/
+**/build/
+**/bin/
+**/.svn/
+**/.gradle/
+**/.classpath
+**/.project
+**/.settings
+*.log
+*.launch
+*.MF
+*.springBeans

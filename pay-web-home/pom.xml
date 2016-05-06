@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cuize.pay</groupId>
+		<artifactId>pay</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	<artifactId>pay-web-home</artifactId>
+	<packaging>war</packaging>
+
+	<name>pay-web-home</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>com.cuize.pay</groupId>
+			<artifactId>pay-service</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<docencoding>${project.reporting.outputEncoding}</docencoding>
+					<charset>${project.reporting.outputEncoding}</charset>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<webResources>
+						<resource>
+							<filtering>true</filtering>
+							<directory>web</directory>
+							<includes>
+								<include>**/web.xml</include>
+							</includes>
+						</resource>
+						<resource>
+							<directory>${project.basedir}/src/main/resources</directory>
+                        	<targetPath>WEB-INF/lib</targetPath>
+							<filtering>true</filtering>
+							<includes>
+                            	<include>**/*nedm_data-3.0.properties</include>
+                        	</includes>
+						</resource>
+					</webResources>
+					<warSourceDirectory>web</warSourceDirectory><!-- Default value is: ${basedir}/src/main/webapp. -->
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<!-- warName:Default value is: ${project.build.finalName} -->
+					<warName>${finalName}</warName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.16.v20140903</version>
+				<configuration>
+					<webApp>
+						<contextPath>/SSHMaven</contextPath>
+						<descriptor>${basedir}/web/WEB-INF/web.xml</descriptor>
+					</webApp>
+					<webAppSourceDirectory>${basedir}/web</webAppSourceDirectory>
+					<scanIntervalSeconds>1</scanIntervalSeconds>
+					<httpConnector>
+						<port>8080</port>
+					</httpConnector>
+
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+
+	</build>
+</project>
