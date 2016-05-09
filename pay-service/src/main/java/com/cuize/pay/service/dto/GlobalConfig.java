@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GlobalConfig {
-	@Value("${app.name:order}")
+	@Value("${app.name:pay}")
 	private String appName;
 
 	@Value("${env}")
@@ -47,32 +47,6 @@ public class GlobalConfig {
 	@Value("${wx.api.accessTokenUrl}")
 	private String accessTokenUrl;
 	
-	@Value("${path.qrpath}")
-	private String qrpath;
-	
-	@Value("${otaaccount}")
-	private String otaaccount;
-	
-	@Value("${otapassword}")
-	private String otapassword;
-	
-	@Value("${hq.mkorder.url}")
-	private String hqMkOrderUrl;//环企下单接口URL
-	
-	@Value("${pic.server.qrBaseUrl}")
-	private String qrBaseUrl;
-	
-	@Value("${system.url.product}")
-	private String productSystemUrl;
-
-	public String getProductSystemUrl() {
-		return productSystemUrl;
-	}
-
-	public String getQrBaseUrl() {
-		return qrBaseUrl;
-	}
-
 	public String getAppName() {
 		return appName;
 	}
@@ -125,24 +99,8 @@ public class GlobalConfig {
 		return queryOrderurl;
 	}
 
-	public String getQrpath() {
-		return qrpath;
-	}
-
 	public String getAccessTokenUrl() {
 		return accessTokenUrl;
 	}
 
-	public String getOtaaccount() {
-		return otaaccount;
-	}
-
-	public String getOtapassword() {
-		return otapassword;
-	}
-
-	public String getHqMkOrderUrl() {
-		return hqMkOrderUrl;
-	}
-	
 }

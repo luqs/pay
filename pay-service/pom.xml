@@ -12,11 +12,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.cuize.commons</groupId>
-			<artifactId>commons-dao-order</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.cuize.commons</groupId>
 			<artifactId>commons-utils</artifactId>
 			<version>0.0.1</version>
 		</dependency>
