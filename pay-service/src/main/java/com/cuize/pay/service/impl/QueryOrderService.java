@@ -16,7 +16,7 @@ import com.cuize.commons.utils.BeanInitialUtils;
 import com.cuize.pay.service.dto.GlobalConfig;
 import com.cuize.pay.service.dto.QueryOrderInDto;
 import com.cuize.pay.service.dto.QueryOrderOutDto;
-import com.cuize.pay.service.helper.WXPayUtil;
+import com.cuize.pay.util.WXPayUtil;
 
 /**
  * 产品库存入库接口

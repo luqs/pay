@@ -1,4 +1,4 @@
-package com.cuize.pay.service.helper;
+package com.cuize.pay.util;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
