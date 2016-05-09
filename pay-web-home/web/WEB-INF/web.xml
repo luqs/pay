@@ -2,10 +2,10 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_0.xsd"
 	metadata-complete="true" version="3.0">
-	<display-name>product</display-name>
+	<display-name>pay</display-name>
 	<context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>order</param-value>
+		<param-value>pay</param-value>
 	</context-param>
 	<context-param>
 		<param-name>spring.profiles.default</param-name>

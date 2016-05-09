@@ -11,9 +11,9 @@
         </filter>  
 	</appender>
 	<appender name="infoFile" class="ch.qos.logback.core.rolling.RollingFileAppender" >  
-		<file>/opt/logs/order/info.log</file><!-- /opt/logs/settle.log -->
+		<file>/opt/logs/pay/info.log</file><!-- /opt/logs/settle.log -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>/opt/logs/order/info.%d{yyyy-MM-dd}.log</FileNamePattern>
+			<FileNamePattern>/opt/logs/pay/info.%d{yyyy-MM-dd}.log</FileNamePattern>
 		</rollingPolicy>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter"> 
             <level>info</level> 
@@ -26,9 +26,9 @@
 	</appender>
 	
 	<appender name="errorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">  
-		<file>/opt/logs/order/error.log</file><!-- /opt/logs/settle.log -->
+		<file>/opt/logs/pay/error.log</file><!-- /opt/logs/settle.log -->
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>/opt/logs/order/error.%d{yyyy-MM-dd}.log</FileNamePattern>
+			<FileNamePattern>/opt/logs/pay/error.%d{yyyy-MM-dd}.log</FileNamePattern>
 		</rollingPolicy>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter"> 
             <level>ERROR</level>
