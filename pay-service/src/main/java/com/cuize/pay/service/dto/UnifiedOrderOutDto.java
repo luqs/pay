@@ -1,5 +1,8 @@
 package com.cuize.pay.service.dto;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="xml")
 public class UnifiedOrderOutDto {
 
 	private String return_code;

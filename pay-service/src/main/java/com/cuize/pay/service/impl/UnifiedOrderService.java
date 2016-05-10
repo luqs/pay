@@ -71,6 +71,5 @@ public class UnifiedOrderService{
 		UnifiedOrderOutDto outDto = WXPayUtil.xml2bean(resXml, UnifiedOrderOutDto.class);
 		
 		return outDto;
-		
 	}
 }

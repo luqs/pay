@@ -18,6 +18,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.cuize.pay.service.dto.CommonInDto;
 import com.cuize.pay.service.dto.UnifiedOrderInDto;
+import com.cuize.pay.service.dto.UnifiedOrderOutDto;
 import com.cuize.pay.service.impl.UnifiedOrderService;
 import com.cuize.pay.web.helper.JosnRPCBizHelper;
 import com.thetransactioncompany.jsonrpc2.JSONRPC2Response;
@@ -49,9 +50,9 @@ public class UnifiedOrderController {
 				new TypeReference<CommonInDto<UnifiedOrderInDto>>() {
 				});
 		JSONRPC2Response jsonresp = new JSONRPC2Response(inDto.getId());
-		// 获取手机的IP
-		service.unifiedOrder(inDto.getParams());
-		jsonresp.setResult(new Object());
+		
+		UnifiedOrderOutDto out = service.unifiedOrder(inDto.getParams());
+		jsonresp.setResult(out);
 		_LOG.info("****** ResponseBody=" + jsonresp.toJSONString());
 		_LOG.info("########################### END【PAY】 queryOrder ###########################\n\n");
 		return jsonresp.toJSONObject();
