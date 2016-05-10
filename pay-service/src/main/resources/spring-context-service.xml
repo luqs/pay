@@ -11,7 +11,7 @@
 	<!-- 
 	<bean id="loggerFilter" name="loggerFilter" class="cn.demo.utils.LoggerMDCFilter" />
  	-->
- 	<context:component-scan base-package="com.cuize.pay.service" use-default-filters="false" annotation-config="false">
+ 	<context:component-scan base-package="com.cuize.pay.service" use-default-filters="false" annotation-config="true">
 		<context:include-filter type="regex" expression=".*Stub.*Repository" />
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>

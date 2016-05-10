@@ -2,6 +2,7 @@ package com.cuize.pay.service.dto;
 
 import com.cuize.commons.meta.RequireField;
 
+
 public class QueryOrderInDto {
 	@RequireField
 	private String orderNo;

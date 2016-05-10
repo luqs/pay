@@ -2,6 +2,7 @@ package com.cuize.pay.util;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -10,6 +11,10 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.SortedMap;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -177,7 +182,16 @@ public class WXPayUtil {
 		return res;
 	}
 	
-	public static <T> T xml2bean(String xmlStr, Class<T> cls) {
+	@SuppressWarnings("unchecked")  
+    public static <T> T xml2bean(String xml, Class<T> c) throws JAXBException {  
+        T t = null;  
+        JAXBContext context = JAXBContext.newInstance(c);  
+        Unmarshaller unmarshaller = context.createUnmarshaller();  
+        t = (T) unmarshaller.unmarshal(new StringReader(xml));  
+        return t;  
+    }  
+	
+	public static <T> T xml2beanx(String xmlStr, Class<T> cls) {
         XStream xstream = new XStream(new DomDriver());
         xstream.processAnnotations(cls);
         @SuppressWarnings("unchecked")

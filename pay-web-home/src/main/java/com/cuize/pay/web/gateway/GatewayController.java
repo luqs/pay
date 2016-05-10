@@ -32,13 +32,8 @@ public class GatewayController {
 	
 	//定义 JSONRPC2 中method 对应访问的controller
 	static {
-		methodProviderMap.put("order.ticket.checkOrderPay", "/checkOrderPay");
-		methodProviderMap.put("order.ticket.createOrder", "/createOrder");
-		methodProviderMap.put("order.ticket.listQr", "/listQr");
-		methodProviderMap.put("order.ticket.verify", "/verify");//订单核销
-		methodProviderMap.put("order.wx.wxPayNotify", "/wxPayNotify");//订单核销
-		methodProviderMap.put("order.ticket.verifyOneTicketPass", "oneTicketSolution");//一票通核销接口
-		
+		methodProviderMap.put("pay.wx.queryOrder", "/queryOrder");
+		methodProviderMap.put("pay.wx.unifiedOrder", "/unifiedOrder");
 	}
 
 	@RequestMapping(value = "gateway", method = RequestMethod.POST)

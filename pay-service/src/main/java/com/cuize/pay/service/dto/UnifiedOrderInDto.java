@@ -1,14 +1,22 @@
 package com.cuize.pay.service.dto;
 
+import com.cuize.commons.meta.RequireField;
+
 public class UnifiedOrderInDto {
+	@RequireField
 	private String body;
 	private String detail;
 	private String attach;
+	@RequireField
 	private String out_trade_no;
 	private String total_fee;
+	@RequireField
 	private String notify_url;
+	@RequireField
 	private String product_id;
+	@RequireField
 	private String openid;
+	@RequireField
 	private String spbill_create_ip;
 
 	public String getBody() {

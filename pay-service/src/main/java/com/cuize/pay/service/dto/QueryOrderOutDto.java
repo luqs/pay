@@ -1,26 +1,123 @@
 package com.cuize.pay.service.dto;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="xml")
 public class QueryOrderOutDto {
 
 	private String return_code;
 	private String return_msg;
 	private String appid;
 	private String mch_id;
-	private String device_info;
 	private String nonce_str;
 	private String sign;
 	private String result_code;
+	private String err_code;
+	private String err_code_des;
+
+	private String device_info;
 	private String openid;
 	private String is_subscribe;
 	private String trade_type;
+	private String trade_state;
+
 	private String bank_type;
 	private String total_fee;
 	private String fee_type;
+	private String cash_fee;
+	private String cash_fee_type;
+	private String coupon_fee;
+	private String coupon_count;
+	private String coupon_batch_id_$n;
+	private String coupon_id_$n;
+	private String coupon_fee_$n;
+
 	private String transaction_id;
 	private String out_trade_no;
 	private String attach;
 	private String time_end;
-	private String trade_state;
+
+	private String trade_state_desc;
+
+	public String getCash_fee() {
+		return cash_fee;
+	}
+
+	public String getErr_code() {
+		return err_code;
+	}
+
+	public void setErr_code(String err_code) {
+		this.err_code = err_code;
+	}
+
+	public String getErr_code_des() {
+		return err_code_des;
+	}
+
+	public void setErr_code_des(String err_code_des) {
+		this.err_code_des = err_code_des;
+	}
+
+	public String getCash_fee_type() {
+		return cash_fee_type;
+	}
+
+	public void setCash_fee_type(String cash_fee_type) {
+		this.cash_fee_type = cash_fee_type;
+	}
+
+	public String getCoupon_fee() {
+		return coupon_fee;
+	}
+
+	public void setCoupon_fee(String coupon_fee) {
+		this.coupon_fee = coupon_fee;
+	}
+
+	public String getCoupon_count() {
+		return coupon_count;
+	}
+
+	public void setCoupon_count(String coupon_count) {
+		this.coupon_count = coupon_count;
+	}
+
+	public String getCoupon_batch_id_$n() {
+		return coupon_batch_id_$n;
+	}
+
+	public void setCoupon_batch_id_$n(String coupon_batch_id_$n) {
+		this.coupon_batch_id_$n = coupon_batch_id_$n;
+	}
+
+	public String getCoupon_id_$n() {
+		return coupon_id_$n;
+	}
+
+	public void setCoupon_id_$n(String coupon_id_$n) {
+		this.coupon_id_$n = coupon_id_$n;
+	}
+
+	public String getCoupon_fee_$n() {
+		return coupon_fee_$n;
+	}
+
+	public void setCoupon_fee_$n(String coupon_fee_$n) {
+		this.coupon_fee_$n = coupon_fee_$n;
+	}
+
+	public void setCash_fee(String cash_fee) {
+		this.cash_fee = cash_fee;
+	}
+
+	public String getTrade_state_desc() {
+		return trade_state_desc;
+	}
+
+	public void setTrade_state_desc(String trade_state_desc) {
+		this.trade_state_desc = trade_state_desc;
+	}
 
 	public String getReturn_code() {
 		return return_code;
