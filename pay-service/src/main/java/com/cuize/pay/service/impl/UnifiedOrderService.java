@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cuize.commons.utils.BeanInitialUtils;
+import com.cuize.commons.utils.WXPayUtil;
 import com.cuize.pay.service.dto.GlobalConfig;
 import com.cuize.pay.service.dto.UnifiedOrderInDto;
 import com.cuize.pay.service.dto.UnifiedOrderOutDto;
-import com.cuize.pay.util.WXPayUtil;
 
 /**
  * 产品库存入库接口
@@ -55,7 +55,7 @@ public class UnifiedOrderService{
 		parameters.put("spbill_create_ip", inDto.getSpbill_create_ip());
 		parameters.put("total_fee", inDto.getTotal_fee());
 		parameters.put("trade_type", "JSAPI");
-		String sign = WXPayUtil.createSign("UTF-8", parameters);
+		String sign = WXPayUtil.createSign("UTF-8",config.getApikey(), parameters);
 		
 		parameters.put("sign", sign);
 		String requestXML = WXPayUtil.getPrepayXml(parameters);

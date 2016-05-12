@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cuize.commons.utils.BeanInitialUtils;
+import com.cuize.commons.utils.WXPayUtil;
 import com.cuize.pay.service.dto.GlobalConfig;
 import com.cuize.pay.service.dto.QueryOrderInDto;
 import com.cuize.pay.service.dto.QueryOrderOutDto;
-import com.cuize.pay.util.WXPayUtil;
 
 /**
  * 产品库存入库接口
@@ -49,7 +49,7 @@ public class QueryOrderService {
 		parameters.put("mch_id", config.getMchid());
 		parameters.put("nonce_str", WXPayUtil.createNoncestr());
 		parameters.put("out_trade_no", orderNo);
-		String sign = WXPayUtil.createSign("UTF-8", parameters);
+		String sign = WXPayUtil.createSign("UTF-8",config.getApikey(), parameters);
 		parameters.put("sign", sign);
 		String requestXML = WXPayUtil.getPrepayXml(parameters);
 		_LOG.info("******* wx queryOrder request xml:" + requestXML);
