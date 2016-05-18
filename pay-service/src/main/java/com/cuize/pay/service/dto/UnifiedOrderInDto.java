@@ -4,20 +4,30 @@ import com.cuize.commons.meta.RequireField;
 
 public class UnifiedOrderInDto {
 	@RequireField
-	private String body;
-	private String detail;
-	private String attach;
-	@RequireField
 	private String out_trade_no;
-	private String total_fee;
 	@RequireField
 	private String notify_url;
 	@RequireField
-	private String product_id;
+	private String body;
 	@RequireField
 	private String openid;
 	@RequireField
 	private String spbill_create_ip;
+	@RequireField
+	private String total_fee;
+	private String detail;
+	private String attach;
+	private String product_id;
+	@RequireField
+	private String trade_type;
+	
+	public String getTrade_type() {
+		return trade_type;
+	}
+
+	public void setTrade_type(String trade_type) {
+		this.trade_type = trade_type;
+	}
 
 	public String getBody() {
 		return body;

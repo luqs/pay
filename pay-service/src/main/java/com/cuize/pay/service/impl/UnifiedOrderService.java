@@ -54,7 +54,7 @@ public class UnifiedOrderService{
 		parameters.put("out_trade_no", inDto.getOut_trade_no());
 		parameters.put("spbill_create_ip", inDto.getSpbill_create_ip());
 		parameters.put("total_fee", inDto.getTotal_fee());
-		parameters.put("trade_type", "JSAPI");
+		parameters.put("trade_type", inDto.getTrade_type());
 		String sign = WXPayUtil.createSign("UTF-8",config.getApikey(), parameters);
 		
 		parameters.put("sign", sign);
