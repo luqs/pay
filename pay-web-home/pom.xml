@@ -39,8 +39,6 @@
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
 					<encoding>${project.build.sourceEncoding}</encoding>
-					<docencoding>${project.reporting.outputEncoding}</docencoding>
-					<charset>${project.reporting.outputEncoding}</charset>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -100,10 +98,13 @@
 					</webApp>
 					<webAppSourceDirectory>${basedir}/web</webAppSourceDirectory>
 					<scanIntervalSeconds>1</scanIntervalSeconds>
-					<httpConnector>
-						<port>8080</port>
-					</httpConnector>
-
+					<stopKey>alpha</stopKey>
+					<stopPort>8009</stopPort>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8080</port>
+						</connector>
+					</connectors>
 				</configuration>
 			</plugin>
 
