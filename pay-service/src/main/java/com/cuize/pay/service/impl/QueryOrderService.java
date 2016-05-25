@@ -25,7 +25,7 @@ import com.cuize.pay.service.dto.QueryOrderOutDto;
  *
  */
 @Service
-@Transactional(value = "orderTransactionManager", rollbackFor = Exception.class)
+@Transactional(rollbackFor = Exception.class)
 public class QueryOrderService {
 	private static final Logger _LOG = LoggerFactory
 			.getLogger(QueryOrderService.class);

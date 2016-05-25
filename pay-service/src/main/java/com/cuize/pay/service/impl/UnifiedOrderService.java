@@ -25,7 +25,7 @@ import com.cuize.pay.service.dto.UnifiedOrderOutDto;
  *
  */
 @Service
-@Transactional(value="orderTransactionManager",rollbackFor=Exception.class)
+@Transactional(rollbackFor=Exception.class)
 public class UnifiedOrderService{
 	private static final Logger _LOG = LoggerFactory.getLogger(UnifiedOrderService.class);
 	
