@@ -3,8 +3,6 @@ package com.cuize.pay.web.api;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.minidev.json.JSONObject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import com.cuize.commons.meta.JosnRPCBizHelper;
 import com.cuize.pay.service.dto.CommonInDto;
 import com.cuize.pay.service.dto.QueryOrderInDto;
 import com.cuize.pay.service.impl.QueryOrderService;
-import com.cuize.pay.web.helper.JosnRPCBizHelper;
 import com.thetransactioncompany.jsonrpc2.JSONRPC2Response;
+
+import net.minidev.json.JSONObject;
 
 /**
  * 产品库存入库接口
