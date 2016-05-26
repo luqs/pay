@@ -43,7 +43,7 @@ public class QueryOrderController {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 
-		_LOG.info("########################### START【PAY】 queryOrder ###########################");
+		_LOG.info("########################### START【PAY】 QueryOrderController ###########################");
 
 		CommonInDto<QueryOrderInDto> inDto = JSON.parseObject(JosnRPCBizHelper
 				.getForwardData(request).toJSONString(),
@@ -55,7 +55,7 @@ public class QueryOrderController {
 		jsonresp.setResult(new Object());
 		_LOG.info("****** ResponseBody=" + jsonresp.toJSONString());
 
-		_LOG.info("########################### END【PAY】 queryOrder ###########################\n\n");
+		_LOG.info("########################### END【PAY】 QueryOrderController ###########################\n\n");
 		return jsonresp.toJSONObject();
 	}
 

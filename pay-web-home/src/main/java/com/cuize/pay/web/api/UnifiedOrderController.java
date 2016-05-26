@@ -44,7 +44,7 @@ public class UnifiedOrderController {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 
-		_LOG.info("########################### START【PAY】 queryOrder ###########################");
+		_LOG.info("########################### START【PAY】 UnifiedOrderController ###########################");
 		CommonInDto<UnifiedOrderInDto> inDto = JSON.parseObject(
 				JosnRPCBizHelper.getForwardData(request).toJSONString(),
 				new TypeReference<CommonInDto<UnifiedOrderInDto>>() {
@@ -54,7 +54,7 @@ public class UnifiedOrderController {
 		UnifiedOrderOutDto out = service.unifiedOrder(inDto.getParams());
 		jsonresp.setResult(out);
 		_LOG.info("****** ResponseBody=" + jsonresp.toJSONString());
-		_LOG.info("########################### END【PAY】 queryOrder ###########################\n\n");
+		_LOG.info("########################### END【PAY】 UnifiedOrderController ###########################\n\n");
 		return jsonresp.toJSONObject();
 
 	}
